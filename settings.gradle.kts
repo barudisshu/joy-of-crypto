@@ -7,15 +7,20 @@
  */
 
 pluginManagement {
-    // Include 'plugins build' to define convention plugins.
-    includeBuild("build-logic")
+  // Include 'plugins build' to define convention plugins.
+  includeBuild("build-logic")
+  repositories {
+    gradlePluginPortal()
+    mavenCentral()
+  }
 }
 
 plugins {
-    // Apply the foojay-resolver plugin to allow automatic download of JDKs
-    id("org.gradle.toolchains.foojay-resolver-convention") version "0.8.0"
+  // Apply the foojay-resolver plugin to allow automatic download of JDKs
+  id("org.gradle.toolchains.foojay-resolver-convention") version "0.8.0"
 }
 
-rootProject.name = "JoyOfCrypto"
 include("part1:chap01")
 include("part2:chap09")
+
+rootProject.name = "joy-of-crypto"

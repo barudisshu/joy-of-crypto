@@ -9,7 +9,9 @@ import org.jetbrains.kotlin.gradle.dsl.KotlinVersion
 
 plugins {
   // Apply the org.jetbrains.kotlin.jvm Plugin to add support for Kotlin.
-  id("org.jetbrains.kotlin.jvm")
+  java
+  idea
+  kotlin("jvm")
   id("org.jlleitschuh.gradle.ktlint")
 }
 
@@ -19,10 +21,8 @@ repositories {
 }
 
 dependencies {
-  constraints {
-    // Define dependency versions as constraints
-    implementation("org.apache.commons:commons-text:1.12.0")
-  }
+  api(kotlin("stdlib"))
+  testImplementation(kotlin("test"))
 }
 
 testing {

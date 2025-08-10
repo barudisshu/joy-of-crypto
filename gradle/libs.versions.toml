@@ -5,6 +5,27 @@
 kotlin-gradle-plugin = "2.2.0"
 ktlint-gradle-plugin = "12.3.0"
 
+slf4j = "2.0.17"
+log4j = "2.24.3"
+disruptor = "4.0.0"
+
+bouncycastle = "1.81"
+
 [libraries]
 kotlin-gradle-plugin = { module = "org.jetbrains.kotlin:kotlin-gradle-plugin", version.ref = "kotlin-gradle-plugin" }
 ktlint-gradle-plugin = { module = "org.jlleitschuh.gradle.ktlint:org.jlleitschuh.gradle.ktlint.gradle.plugin", version.ref = "ktlint-gradle-plugin" }
+
+bcprov-jdk18on = { group = "org.bouncycastle", name = "bcprov-jdk18on", version.ref = "bouncycastle" }
+bcpkix-jdk18on = { group = "org.bouncycastle", name = "bcpkix-jdk18on", version.ref = "bouncycastle" }
+
+slf4jApi = { module = "org.slf4j:slf4j-api", version.ref = "slf4j" }
+log4jApi = { module = "org.apache.logging.log4j:log4j-api", version.ref = "log4j" }
+log4j-slf4j2-impl = { module = "org.apache.logging.log4j:log4j-slf4j-impl", version.ref = "log4j" }
+disruptor = { group = "com.lmax", name = "disruptor", version.ref = "disruptor" }
+
+[bundles]
+log4j2-ecosystem = ["slf4jApi", "log4j-slf4j2-impl", "log4jApi", "disruptor"]
+bouncycastle-ecosystem = ["bcprov-jdk18on", "bcpkix-jdk18on"]
+
+[plugins]
+kotlin = { id = "org.jetbrains.kotlin.jvm", version.ref = "kotlin-gradle-plugin" }
