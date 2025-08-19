@@ -1,0 +1,6 @@
+= Introduction
+
+== About this Book
+
+In order to this brief and to the point, this booklet is not about cryptography so much, as about the BC FIPS Java API and how it presents cryptography. T o get the most out of this book, you should have some understanding of the principals of cryptography. Having an existing understanding of the Java Cryptography Architecture, the Java Cryptography Extension, and the Java Secure Socket Extension would not hurt either, although you can probably pick a lot of that up by working through the examples.
+

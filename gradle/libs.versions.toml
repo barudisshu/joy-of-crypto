@@ -10,6 +10,7 @@ log4j = "2.24.3"
 disruptor = "4.0.0"
 
 bouncycastle = "1.81"
+fips = "2.1.1"
 
 [libraries]
 kotlin-gradle-plugin = { module = "org.jetbrains.kotlin:kotlin-gradle-plugin", version.ref = "kotlin-gradle-plugin" }
@@ -17,6 +18,12 @@ ktlint-gradle-plugin = { module = "org.jlleitschuh.gradle.ktlint:org.jlleitschuh
 
 bcprov-jdk18on = { group = "org.bouncycastle", name = "bcprov-jdk18on", version.ref = "bouncycastle" }
 bcpkix-jdk18on = { group = "org.bouncycastle", name = "bcpkix-jdk18on", version.ref = "bouncycastle" }
+
+bc-fips = { group = "org.bouncycastle", name = "bc-fips", version.ref = "fips" }
+bcpkix-fips = { group = "org.bouncycastle", name = "bcpkix-fips", version.ref = "fips" }
+bctls-fips = { group = "org.bouncycastle", name = "bctls-fips", version.ref = "fips" }
+bcutils-fips = { group = "org.bouncycastle", name = "bctls-fips", version.ref = "fips" }
+bcpg-fips = { group = "org.bouncycastle", name = "bcpg-fips", version.ref = "fips" }
 
 slf4jApi = { module = "org.slf4j:slf4j-api", version.ref = "slf4j" }
 log4jApi = { module = "org.apache.logging.log4j:log4j-api", version.ref = "log4j" }
@@ -26,6 +33,7 @@ disruptor = { group = "com.lmax", name = "disruptor", version.ref = "disruptor" 
 [bundles]
 log4j2-ecosystem = ["slf4jApi", "log4j-slf4j2-impl", "log4jApi", "disruptor"]
 bouncycastle-ecosystem = ["bcprov-jdk18on", "bcpkix-jdk18on"]
+fips-ecosystem = ["bc-fips", "bcpkix-fips", "bctls-fips", "bcutils-fips", "bcpg-fips"]
 
 [plugins]
 kotlin = { id = "org.jetbrains.kotlin.jvm", version.ref = "kotlin-gradle-plugin" }

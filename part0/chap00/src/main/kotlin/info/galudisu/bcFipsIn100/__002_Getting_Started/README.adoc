@@ -1,0 +1,31 @@
+= Getting Started
+
+== Provider Installation
+
+Bouncy Castle FIPS Java provider 可以通过JVM配置文件，或在运行时安装。
+
+[source,properties]
+----
+security.provider.X=org.bouncycastle.jcajce.provider.BouncyCastleFipsProvider
+----
+
+其中X是安装顺序，数字越小越优先级高。
+
+也可以通过下面方式在执行时安装。
+
+[source,kotlin]
+----
+import java.security.Security
+import org.bouncycastle.jcajce.provider.BouncyCastleFipsProvider
+----
+
+然后在静态块中添加一次即可：
+
+[source,kotlin]
+----
+Security.addProvider(BouncyCastleFipsProvider())
+----
+
+一旦provider被添加，就可以在代码中使用provider的名字"BCFIPS"作为引用。
+
+== Provider Configuration

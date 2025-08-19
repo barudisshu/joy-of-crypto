@@ -20,6 +20,8 @@ plugins {
   id("org.gradle.toolchains.foojay-resolver-convention") version "0.8.0"
 }
 
+include("interoperability-tests")
+include("perms")
 include("part0:chap00")
 include("part1:chap01")
 include("part2:chap09")
